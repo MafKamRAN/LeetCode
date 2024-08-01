@@ -1,0 +1,20 @@
+class Solution{
+  public:
+        vector<int> rowAndMaxOnes(vector<vector<int>>& matrix){
+            int maxOnes = 0;
+            int bestRow = 0;
+            for(int i = 0; i < matrix.size(); i++){
+                int numOnes = 0;
+                for(int j = 0; j < matrix[0].size(); j++){
+                    if(matrix[i][j] == 1){
+                      numOnes++;
+                    }
+                }
+                if(numOnes > maxOnes){
+                  maxOnes = numOnes;
+                  bestRow = i;
+                }
+            }
+          return {bestRow, maxOnes};
+        }
+};
